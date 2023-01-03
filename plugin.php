@@ -61,6 +61,8 @@ function woo_custom_description_tab($tabs)
 
 function woo_custom_description_tab_content()
 {
-    echo '<h2>Custom Description</h2>';
-    echo '<p>Here\'s a custom description</p>';
+    woocommerce_wp_text_input([
+        'id' => '_custom-id',
+        'label' => __('Number in package', 'txtdomain'),
+    ]);
 }

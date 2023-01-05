@@ -1,3 +1,5 @@
+
+
 <?php
 
 /**
@@ -26,6 +28,12 @@ if (!defined('ABSPATH')) {
 //     flush_rewrite_rules();
 // }
 
+function activate()
+{
+    //flush rewrite rules
+    flush_rewrite_rules();
+}
+
 //add custom tabs in single product
 add_filter('woocommerce_product_data_tabs', 'wk_custom_product_tab', 10, 1);
 
@@ -50,19 +58,19 @@ function wk_custom_tab_data()
 }
 
 
-add_filter('woocommerce_product_tabs', 'woo_custom_description_tab', 98);
-function woo_custom_description_tab($tabs)
-{
+// add_filter('woocommerce_product_tabs', 'woo_custom_description_tab', 98);
+// function woo_custom_description_tab($tabs)
+// {
 
-    $tabs['description']['callback'] = 'woo_custom_description_tab_content';    // Custom description callback
+//     $tabs['description']['callback'] = 'woo_custom_description_tab_content';    // Custom description callback
 
-    return $tabs;
-}
+//     return $tabs;
+// }
 
-function woo_custom_description_tab_content()
-{
-    woocommerce_wp_text_input([
-        'id' => '_custom-id',
-        'label' => __('Number in package', 'txtdomain'),
-    ]);
-}
+// function woo_custom_description_tab_content()
+// {
+//     woocommerce_wp_text_input([
+//         'id' => '_custom-id',
+//         'label' => __('Number in package', 'txtdomain'),
+//     ]);
+// }

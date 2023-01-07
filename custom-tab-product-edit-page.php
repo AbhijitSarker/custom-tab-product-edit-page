@@ -48,4 +48,3 @@ function wk_custom_tab_data()
 
     </div>';
 }
-
